@@ -1,4 +1,11 @@
-﻿export const departments = [
+﻿
+// Contexto 
+// El proyecto utiliza dos elementos relacionados: En este caso pues son Departamentos y Regiones de Colombia. 
+// Un departamento pertenece a una región específica y una región contiene muchos departamentos. 
+// Y esta relación permite consultar que región pertenece un departamento o que departamentos tiene una región.
+
+// Aca Tengo la data de los departamentos De Colombia.
+export const departments = [
   {"id":1,"name":"Amazonas","description":"Amazonas es uno de los treinta y dos departamentos...","cityCapitalId":1,"municipalities":2,"surface":109665,"population":82068,"phonePrefix":"8","countryId":1,"regionId":4},
   {"id":2,"name":"Antioquia","description":"Antioquia es uno de los treinta y dos departamentos...","cityCapitalId":12,"municipalities":125,"surface":63612,"population":6887306,"phonePrefix":"4","countryId":1,"regionId":5},
   {"id":3,"name":"Arauca","description":"Arauca es uno de los treinta y dos departamentos...","cityCapitalId":143,"municipalities":7,"surface":23818,"population":304978,"phonePrefix":"7","countryId":1,"regionId":3},
@@ -33,7 +40,7 @@
   {"id":32,"name":"Vaupés","description":"Vaupés es uno de los treinta y dos departamentos...","cityCapitalId":1115,"municipalities":3,"surface":54135,"population":48932,"phonePrefix":"8","countryId":1,"regionId":4},
   {"id":33,"name":"Vichada","description":"Vichada es uno de los treinta y dos departamentos...","cityCapitalId":1121,"municipalities":4,"surface":100242,"population":115778,"phonePrefix":"8","countryId":1,"regionId":3}
 ];
-
+// Y aca tengo la data de las regiones de Colombia.
 export const regions = [
   {"id":1,"name":"Caribe","description":"La región caribe es una de las regiones más importantes del territorio Colombiano."},
   {"id":2,"name":"Pacífico","description":"La Región del Pacífico se ubica al occidente de Colombia."},

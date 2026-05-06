@@ -1,0 +1,90 @@
+﻿fragment BasicDepartment on Department {
+  id
+  name
+  description
+  population
+  municipalities
+  surface
+}
+
+fragment FullDepartment on Department {
+  ...BasicDepartment
+  phonePrefix
+  regionId
+  region {
+    id
+    name
+  }
+}
+
+fragment BasicRegion on Region {
+  id
+  name
+  description
+}
+
+fragment FullRegion on Region {
+  ...BasicRegion
+  departments {
+    id
+    name
+    population
+  }
+}
+
+query GetDepartmentById($deptId: ID!) {
+  departmentById(id: $deptId) {
+    ...FullDepartment
+  }
+}
+
+query GetDepartmentByName($deptName: String!) {
+  departmentByName(name: $deptName) {
+    ...FullDepartment
+  }
+}
+
+query GetAllDepartments {
+  allDepartments {
+    ...BasicDepartment
+  }
+}
+
+query GetDepartmentsByRegionId($regionId: ID!) {
+  departmentsByRegionId(regionId: $regionId) {
+    id
+    name
+    population
+    region {
+      name
+    }
+  }
+}
+
+query GetDepartmentsByMinPopulation($minPopulation: Int!) {
+  departmentsByMinPopulation(minPopulation: $minPopulation) {
+    ...BasicDepartment
+  }
+}
+
+query GetRegionById($regionId: ID!) {
+  regionById(id: $regionId) {
+    ...FullRegion
+  }
+}
+
+query GetRegionByName($regionName: String!) {
+  regionByName(name: $regionName) {
+    ...BasicRegion
+    departments {
+      name
+      population
+    }
+  }
+}
+
+query GetAllRegions {
+  allRegions {
+    ...BasicRegion
+  }
+}

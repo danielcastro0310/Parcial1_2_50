@@ -16,12 +16,19 @@ http://localhost:4000
 ## Queries disponibles
 
 departmentById(id: ID!)
+
 departmentByName(name: String!)
+
 allDepartments
+
 departmentsByRegionId(regionId: ID!)
+
 departmentsByMinPopulation(minPopulation: Int!)
+
 regionById(id: ID!)
+
 regionByName(name: String!)
+
 allRegions
 
 ## Ejemplos de uso
@@ -37,6 +44,7 @@ Obtener un departamento por ID:
   }
 }
 
+
 Obtener departamentos de la region Andina:
 {
   departmentsByRegionId(regionId: 5) {
@@ -44,6 +52,7 @@ Obtener departamentos de la region Andina:
     population
   }
 }
+
 
 Obtener departamentos con mas de 2 millones de habitantes:
 {
@@ -56,18 +65,30 @@ Obtener departamentos con mas de 2 millones de habitantes:
 ## Fragments
 
 BasicDepartment: id, name, description, population, municipalities, surface
+
 FullDepartment: BasicDepartment + phonePrefix, regionId, region
+
 BasicRegion: id, name, description
+
 FullRegion: BasicRegion + departments
+
 
 ## Estructura del proyecto
 
 Parcial1_2_50/
+
 ├── index.js
+
 ├── package.json
+
 ├── src/
+
 │   ├── data/colombiaData.js
+
 │   ├── resolvers/resolvers.js
+
 │   ├── schema/schema.js
+
 │   └── queries/clientQueries.graphql
+
 └── README.md
